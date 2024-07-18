@@ -1,15 +1,19 @@
 package operations
 
-import "strconv"
+import (
+	"strconv"
 
-func add(a string, b string) string {
-	num1, err := strconv.Atoi(a)
+	"github.com/gin-gonic/gin"
+)
+
+func Add(server *gin.Context) string {
+	num1, err := strconv.Atoi(server.Query("num1"))
 
 	if err != nil {
 		return "Invalid input"
 	}
 
-	num2, err := strconv.Atoi(b)
+	num2, err := strconv.Atoi(server.Query("num2"))
 
 	if err != nil {
 		return "Invalid input"
@@ -20,14 +24,14 @@ func add(a string, b string) string {
 	return strconv.Itoa(realResult)
 }
 
-func sub(a string, b string) string {
-	num1, err := strconv.Atoi(a)
+func Sub(server *gin.Context) string {
+	num1, err := strconv.Atoi(server.Query("num1"))
 
 	if err != nil {
 		return "Invalid input"
 	}
 
-	num2, err := strconv.Atoi(b)
+	num2, err := strconv.Atoi(server.Query("num2"))
 
 	if err != nil {
 		return "Invalid input"
@@ -39,15 +43,15 @@ func sub(a string, b string) string {
 
 }
 
-func div(a string, b string) string {
+func Div(server *gin.Context) string {
 
-	num1, err := strconv.Atoi(a)
+	num1, err := strconv.Atoi(server.Query("num1"))
 
 	if err != nil {
 		return "Invalid input"
 	}
 
-	num2, err := strconv.Atoi(b)
+	num2, err := strconv.Atoi(server.Query("num2"))
 
 	if err != nil {
 		return "Invalid input"
@@ -59,15 +63,15 @@ func div(a string, b string) string {
 
 }
 
-func multi(a string, b string) string {
+func Multi(server *gin.Context) string {
 
-	num1, err := strconv.Atoi(a)
+	num1, err := strconv.Atoi(server.Query("num1"))
 
 	if err != nil {
 		return "Invalid input"
 	}
 
-	num2, err := strconv.Atoi(b)
+	num2, err := strconv.Atoi(server.Query("num2"))
 
 	if err != nil {
 		return "Invalid input"
